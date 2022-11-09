@@ -31,6 +31,8 @@ func ParseRule(tp, payload, target string, params []string) (C.Rule, error) {
 		parsed, parseErr = NewPort(payload, target, true)
 	case "DST-PORT":
 		parsed, parseErr = NewPort(payload, target, false)
+	case "IN-PORT":
+		parsed, parseErr = NewInPort(payload, target)
 	case "PROCESS-NAME":
 		parsed, parseErr = NewProcess(payload, target, true)
 	case "PROCESS-PATH":

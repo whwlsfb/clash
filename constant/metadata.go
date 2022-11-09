@@ -67,6 +67,7 @@ type Metadata struct {
 	DstIP       net.IP  `json:"destinationIP"`
 	SrcPort     string  `json:"sourcePort"`
 	DstPort     string  `json:"destinationPort"`
+	InPort      string  `json:"inPort"`
 	Host        string  `json:"host"`
 	DNSMode     DNSMode `json:"dnsMode"`
 	ProcessPath string  `json:"processPath"`

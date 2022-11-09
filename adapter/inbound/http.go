@@ -17,5 +17,8 @@ func NewHTTP(target socks5.Addr, source net.Addr, conn net.Conn) *context.ConnCo
 		metadata.SrcIP = ip
 		metadata.SrcPort = port
 	}
+	if _, port, err := parseAddr(conn.LocalAddr().String()); err == nil {
+		metadata.InPort = port
+	}
 	return context.NewConnContext(conn, metadata)
 }
